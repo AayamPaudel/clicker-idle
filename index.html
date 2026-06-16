@@ -1,27 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="header">
-        Clicker Idle
+        <h1>
+            Clicker Idle
+        </h1>
         <span id="time">
-
+            01:01:01 PM
         </span>
     </div>
 
-    <div id="box1">
+    <div id="box1" class="box">
         <h3 id="name">
             Player: Guest
         </h3>
-        <button onclick="nameChange()">
+        <button onclick="nameChange()" id="namechange">
             Change Name
         </button>
-        <img src="avatar.png">
+        <div>
+            <img src="avatar.png">
+        </div>
     </div>
+
+    <div id="box2" class="box">
+
+        <span>
+            Stats
+        </span>
+
+        <p id="totalclicks">
+            Total Clicks: 0
+        </p>
+
+        <p id="clickpower">
+            Click Power: 0
+        </p>
+
+        <p id="auto">
+            Auto Clicker Power: 0
+        </p>
+
+        <p id="total">
+            Total Money: 0
+        </p>
+
+    </div>
+
+    <div id="box3" class="box">
+        <span>
+            Achievements
+        </span>
+        <div>
+            <div>
+                <img>
+            </div>
+            <div>
+                <img>
+            </div>
+            <div>
+                <img>
+            </div>
+        </div>
+    </div>
+
+    <div id="box4" class="box">
+        <h2>
+            Your Money
+        </h2>
+        <p>
+            $0
+        </p>
+        <button id="money">
+            Make Money(+$1)
+        </button>
+        <div>
+        <button id="save">
+            Save Game
+        </button>
+        <button id="load">
+            Load Game
+        </button>
+        </div>
+    </div>
+
+    <div id="box5" class="box">
+        Console
+        <textarea id="console" rows="7" disabled>
+            Game Started...
+        </textarea>
+    </div>
+
 </body>
+
 </html>
