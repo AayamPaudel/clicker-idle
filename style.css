@@ -36,7 +36,7 @@ body {
 
 #box1 button {
     color: #000;
-    font-weight: 300px;
+    font-weight: 400;
     background-color: #ff6a00;
     outline: none;
     border: none;
@@ -64,7 +64,7 @@ img {
     font-weight: 100;
 }
 
-#box4{
+#box4 {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -73,12 +73,12 @@ img {
     gap: 30px;
 }
 
-#box4 p{
+#box4 p {
     font-size: 26px;
     font-weight: bold;
 }
 
-#box4 #money{
+#box4 #money {
     width: 80%;
     background-color: rgb(2, 130, 130);
     border: none;
@@ -88,17 +88,17 @@ img {
     border-radius: 10px;
 }
 
-#save{
+#save {
     background-color: #00ff00;
     outline: none;
     border: none;
     border-radius: 3px;
     padding: 5px;
     color: black;
-    cursor: pointer;    
+    cursor: pointer;
 }
 
-#load{
+#load {
     background-color: #00f;
     outline: none;
     border: none;
@@ -107,17 +107,45 @@ img {
     cursor: pointer;
 }
 
-#box5{
+#box5 {
     display: flex;
     flex-direction: column;
 }
 
-#console{
+#console {
     background-color: #2b1e1e;
     border: 2px solid cyan;
     resize: none;
     overflow: auto;
-    text-align: left;
+    height: auto;
+    line-height: 1.5;
+    color: lime;
+    font-weight: 400;
+    font-family: inherit;
+    padding: 10px;
+}
+
+
+#box6 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#autoclicker {
+    background-color: rgb(8, 139, 139);
+}
+
+#autoclicker, #clickupgrade {
+    border: none;
+    width: 100%;
+    padding: 8px;
+    font-weight: bold;
+}
+
+#clickupgrade {
+    background-color: yellow;
+    color: black;
 }
 
 /*body {
