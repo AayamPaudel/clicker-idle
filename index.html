@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body id="body">
     <div id="header">
         <h1>
             Clicker Idle
@@ -41,15 +41,11 @@
         </p>
 
         <p id="clickpower">
-            Click Power: 0
+            Click Power: 1
         </p>
 
         <p id="auto">
             Auto Clicker Power: 0
-        </p>
-
-        <p id="total">
-            Total Money: 0
         </p>
 
     </div>
@@ -75,19 +71,19 @@
         <h2>
             Your Money
         </h2>
-        <p>
+        <p id="moneypara">
             $0
         </p>
         <button id="money">
             Make Money(+$1)
         </button>
         <div>
-        <button id="save">
-            Save Game
-        </button>
-        <button id="load">
-            Load Game
-        </button>
+            <button id="save">
+                Save Game
+            </button>
+            <button id="load">
+                Load Game
+            </button>
         </div>
     </div>
 
@@ -98,13 +94,35 @@
 
     <div id="box6" class="box">
         Shop
-        <button id="autoclicker">
+        <button id="autoclicker" onclick="autoclicker()">
             By Autoclicker ($50)
         </button>
-        <button id="clickupgrade">
+        <button id="clickupgrade" onclick="powerup()">
             Upgrade Click Power ($10)
         </button>
     </div>
+
+    <!-- <div id="box7" class="box">
+        <p>
+            Themes
+        </p>
+        <div class="imgs">
+            <div class="img">
+                <button onclick="lightTheme()">
+                    Light
+                </button>
+            </div>
+            <div class="img">
+                <button onclick="darkTheme()">
+                    Dark
+                </button>
+            </div>
+        </div>
+    </div> -->
+
+    <script src="script.js">
+        
+    </script>
 
 </body>
 
