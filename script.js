@@ -14,64 +14,71 @@ const autobtn = document.getElementById("autoclicker")
 const clickupgrade = document.getElementById("clickupgrade")
 
 function autoclicker() {
-    if (acprice > money) {
-
-    }
-    else if(acprice > money) {
+    if (acprice <= money) {
         money -= acprice
         if (acprice <= 5000) {
             autopower += 1
-            acprice = parseInt(acprice * 2)
+            acprice = parseInt(acprice * 1.8)
         }
         else if (acprice < 100000) {
             autopower += 2
-            acprice = parseInt(acprice * 1.7)
+            acprice = parseInt(acprice * 1.4)
         }
         else {
             autopower += 5
-            acprice = parseInt(acprice * 2)
+            acprice = parseInt(acprice * 1.6)
         }
-        auto.innerText = `Auto Clicker Power: ${autopower}`
-        autobtn.innerText = `Buy Autoclicker ($${acprice})`
+        update()
+        command("Bought autoclicker")
     }
 }
 
 function powerup() {
-    if (cprice > money) {
-        
-    }
-    else {
+    if (cprice <= money) {
         money -= cprice
         if (cprice <= 5000) {
             clickpower += 1
-            cprice = parseInt(cprice * 2)
+            cprice = parseInt(cprice * 1.8)
         }
         else if (cprice < 100000) {
             clickpower += 2
-            cprice = parseInt(cprice * 1.6)
+            cprice = parseInt(cprice * 1.4)
         }
         else {
             clickpower += 5
-            cprice = parseInt(cprice * 2)
+            cprice = parseInt(cprice * 1.6)
         }
-        cp.innerText = `Click Power: ${clickpower}`
-        clickupgrade.innerText = `Upgrade Click Power ($${cprice})`
-        document.getElementById("money").innerText = `Make Money(+$${clickpower})`
+        command("Upgraded Clicking Power")
         update()
     }
 }
 
+setInterval(() => {
+    money += autopower
+    update()
+}, 1000)
+
 function update() {
-    clickpower
+    cp.innerText = `Click Power: ${clickpower}`
+    clickupgrade.innerText = `Upgrade Click Power ($${cprice})`
+    autobtn.innerText = `Buy Autoclicker ($${acprice})`
+    auto.innerText = `Auto Clicker Power: ${autopower}`
     moneypara.innerText = `$${money}`
+    totalpara.innerText = `Total Clicks: ${totalclicks}`
+    document.getElementById("money").innerText = `Make Money(+$${clickpower})`
 }
 
 document.getElementById("money").addEventListener("click", () => {
     money += clickpower
-    moneypara.innerText = `$${money}`
-    totalclicks += 1
-    totalpara.innerText = `Total Clicks: ${totalclicks}`
+    totalclicks++
+    update()
 })
+
+function command(msg) {
+    consolee.innerText = consolee.innerText + "\n" + msg
+    consolee.scrollTop = consolee.scrollHeight
+}
+
 
 // let money = 0;
 // let clickPower = 1;
