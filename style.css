@@ -64,6 +64,28 @@ img {
     font-weight: 100;
 }
 
+#achievements{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr)
+}
+
+#clickachievements{
+    margin-top: 10px;
+}
+
+#clickachievements p, #upgradeachievements p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#box3 ol{
+    margin-left: 20px;
+}
+
+ol li{
+    line-height: 2rem;
+}
+
 #box4 {
     text-align: center;
     display: flex;
@@ -128,12 +150,11 @@ img {
     border: 2px solid cyan;
     resize: none;
     overflow: auto;
-    height: auto;
-    line-height: 1.5;
     color: lime;
     font-weight: 400;
     font-family: inherit;
-    padding: 10px;
+    padding: 50px;
+    font-size: 50px;
 }
 
 #box6 {

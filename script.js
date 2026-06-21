@@ -79,6 +79,13 @@ function command(msg) {
     consolee.scrollTop = consolee.scrollHeight
 }
 
+function updateClock() {
+    const now = new Date();
+
+    document.getElementById("time").innerText = now.toLocaleTimeString();
+}
+
+setInterval(updateClock, 1000);
 
 // let money = 0;
 // let clickPower = 1;
