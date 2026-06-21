@@ -118,26 +118,28 @@ ol li{
 
 #save {
     background-color: #00ff00;
-    outline: none;
-    border: none;
-    border-radius: 3px;
-    padding: 5px;
     color: black;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-}
-
-#save:hover{
-    background-color: #018501;
 }
 
 #load {
     background-color: #00f;
+}
+
+#save, #load{
     outline: none;
-    border: none;
     border-radius: 3px;
     padding: 5px;
     cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+#load:hover, #save:hover{
+    background: transparent;
+    border: 2px solid cyan;
+    color: cyan;
+    font-weight: bold;
+
 }
 
 #box5 {
@@ -153,8 +155,7 @@ ol li{
     color: lime;
     font-weight: 400;
     font-family: inherit;
-    padding: 50px;
-    font-size: 50px;
+    padding: 10px;
 }
 
 #box6 {

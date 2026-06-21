@@ -75,7 +75,8 @@ document.getElementById("money").addEventListener("click", () => {
 })
 
 function command(msg) {
-    consolee.innerText = consolee.innerText + "\n" + msg
+    let consoletext = consolee.innerText
+    consolee.innerText = consoletext + "\n" + msg
     consolee.scrollTop = consolee.scrollHeight
 }
 
@@ -87,130 +88,32 @@ function updateClock() {
 
 setInterval(updateClock, 1000);
 
-// let money = 0;
-// let clickPower = 1;
-// let totalClicks = 0;
-// let autoclickers = 0;
+document.getElementById("save").addEventListener("click", () => {
+    const data = {
+        money,
+        clickpower,
+        totalclicks,
+        autopower,
+        cprice,
+        acprice
+    };
+    localStorage.setItem("gameSave", JSON.stringify(data));
+    command("Game saved");
+});
 
-// const moneyEl = document.getElementById("money");
-// const clickPowerEl = document.getElementById("clickPower");
-// const totalClicksEl = document.getElementById("totalClicks");
-// const autoclickersEl = document.getElementById("autoclickers");
-// const totalMoneyEl = document.getElementById("totalMoney");
-// const consoleEl = document.getElementById("console");
-
-// function updateUI() {
-//     moneyEl.innerText = money;
-//     clickPowerEl.innerText = clickPower;
-//     totalClicksEl.innerText = totalClicks;
-//     autoclickersEl.innerText = autoclickers;
-//     totalMoneyEl.innerText = money;
-// }
-
-// function log(message) {
-//     consoleEl.value += "\n" + message;
-//     consoleEl.scrollTop = consoleEl.scrollHeight;
-// }
-
-// document.getElementById("moneyButton").addEventListener("click", () => {
-//     money += clickPower;
-//     totalClicks++;
-
-//     if (totalClicks >= 10) {
-//         document.getElementById("achievement1").classList.add("unlocked");
-//     }
-
-//     updateUI();
-// });
-
-// document.getElementById("buyAutoclicker").addEventListener("click", () => {
-//     if (money >= 10) {
-//         money -= 10;
-//         autoclickers++;
-//         log("Bought an autoclicker");
-//         updateUI();
-//     } else {
-//         alert("Not enough money");
-//     }
-// });
-
-// document.getElementById("upgradePower").addEventListener("click", () => {
-//     if (money >= 50) {
-//         money -= 50;
-//         clickPower++;
-//         log("Click power upgraded");
-//         updateUI();
-//     } else {
-//         alert("Not enough money");
-//     }
-// });
-
-// setInterval(() => {
-//     money += autoclickers;
-//     updateUI();
-// }, 1000);
-
-// document.getElementById("saveBtn").addEventListener("click", () => {
-
-//     const gameData = {
-//         money,
-//         clickPower,
-//         totalClicks,
-//         autoclickers
-//     };
-
-//     localStorage.setItem("idleGameSave", JSON.stringify(gameData));
-
-//     log("Game saved");
-// });
-
-// document.getElementById("loadBtn").addEventListener("click", () => {
-
-//     const saveData = JSON.parse(localStorage.getItem("idleGameSave"));
-
-//     if (saveData) {
-//         money = saveData.money;
-//         clickPower = saveData.clickPower;
-//         totalClicks = saveData.totalClicks;
-//         autoclickers = saveData.autoclickers;
-
-//         updateUI();
-
-//         log("Game loaded");
-//     } else {
-//         alert("No save found");
-//     }
-// });
-
-// document.getElementById("saveName").addEventListener("click", () => {
-
-//     const newName = document.getElementById("nameInput").value.trim();
-
-//     if (newName !== "") {
-//         document.getElementById("playerName").innerText =
-//             "Player: " + newName;
-//     }
-// });
-
-// function setTheme(mode) {
-
-//     if (mode === "light") {
-//         document.body.style.background = "#f5f5f5";
-//         document.body.style.color = "#111";
-//     } else {
-//         document.body.style.background = "#121212";
-//         document.body.style.color = "white";
-//     }
-// }
-
-// function updateClock() {
-//     const now = new Date();
-
-//     document.getElementById("clock").innerText =
-//         now.toLocaleTimeString();
-// }
-
-// setInterval(updateClock, 1000);
-
-// updateClock();
-// updateUI();
+document.getElementById("load").addEventListener("click", () => {
+    const data = JSON.parse(localStorage.getItem("gameSave"));
+    if (data) {
+        totalclicks = data.totalclicks
+        clickpower = data.clickpower
+        autopower = data.autopower
+        cprice = data.cprice
+        acprice = data.acprice
+        money = data.money
+        update();
+        command("Game loaded")
+    }
+    else {
+        command("No save found")
+    }
+});
